@@ -6,9 +6,9 @@ import WeatherNow from "./sections/weather-now/WeatherNow";
 
 function App() {
     return (
-        <div className="application">
+        <div className="application bg-gradient-to-br from-bg-50 to-bg-100 flex justify-center flex-col items-center w-full p-[63px]">
             <AppHeader />
-            <content>
+            <content className="sized">
                 <MainInfo />
                 <WeatherNow />
                 <DaysForecast />

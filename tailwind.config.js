@@ -1,0 +1,20 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+     "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        'bg': {
+          50: '#383838',
+          100: '#1e1e1e'
+        },
+        'text-color': '#FFFFFF',
+        'placeholder-color': '#FFFFFF28'
+      }
+    },
+  },
+  plugins: [],
+}
+
