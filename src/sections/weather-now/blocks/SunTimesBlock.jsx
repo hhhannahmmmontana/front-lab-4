@@ -3,7 +3,7 @@ import sunset from "/src/img/icons/sunset.png";
 
 function SunTimesBlock() {
     return (
-        <div className="sun-times-block grid grid-cols-1 gap-y-[13px]">
+        <div className="sun-times-block grid grid-cols-1 gap-y-[13px] w-full">
             <div className="sun-time sunrise">
                 <img className="icon" alt="Sunrise" src={sunrise} />
                 <div className="text-block">

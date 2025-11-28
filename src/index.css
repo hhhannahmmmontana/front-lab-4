@@ -92,6 +92,7 @@ code {
 
 .sun-time {
   display: flex;
+  width: 100%;
   .icon {
     margin-right: 11px;
   }
@@ -103,6 +104,34 @@ code {
     .time {
       font-weight: 600;
       font-size: 16px;
+      width: fit-content;
+    }
+  }
+}
+
+.weather-spec-info-block {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  width: 210px;
+  justify-content: space-between;
+  row-gap: 21px;
+
+  .weather-spec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .icon {
+      width: 60px;
+      height: 60px;
+    }
+    .value {
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .name {
+      font-size: 16px;
+      font-weight: 600;
     }
   }
 }
