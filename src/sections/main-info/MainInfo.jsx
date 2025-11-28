@@ -1,9 +1,9 @@
 function MainInfo() {
     return (
-        <section className="main-info">
-            <h3 className="city-name">Athens</h3>
-            <h2 className="time">09:03</h2>
-            <p className="date">Thursday, 31 Aug</p>
+        <section className="main-info block flex flex-col justify-center">
+            <h3 className="city-name font-bold text-[36px] mb-[72px]">Athens</h3>
+            <h2 className="time font-bold text-[96px] leading-none">09:03</h2>
+            <p className="date mt-0 pt-0">Thursday, 31 Aug</p>
         </section>
     );
 }

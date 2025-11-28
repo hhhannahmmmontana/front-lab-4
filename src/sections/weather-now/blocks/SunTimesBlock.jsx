@@ -1,16 +1,18 @@
+import sunrise from "/src/img/icons/sunrise.png";
+import sunset from "/src/img/icons/sunset.png";
 
 function SunTimesBlock() {
     return (
-        <div className="sun-times-block">
+        <div className="sun-times-block grid grid-cols-1 gap-y-[13px]">
             <div className="sun-time sunrise">
-                <img className="icon" />
+                <img className="icon" alt="Sunrise" src={sunrise} />
                 <div className="text-block">
-                    <h3 className="name" alt="sunrise">Sunrise</h3>
+                    <h3 className="name">Sunrise</h3>
                     <p className="time">06:37 AM</p>
                 </div>
             </div>
             <div className="sun-time sunset">
-                <img className="icon" alt="sunset" />
+                <img className="icon" alt="Sunset" src={sunset} />
                 <div className="text-block">
                     <h3 className="name">Sunset</h3>
                     <p className="time">08:37 PM</p>

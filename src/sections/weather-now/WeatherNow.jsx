@@ -5,8 +5,8 @@ import WeatherSpecInfoBlock from "./blocks/WeatherSpecInfoBlock";
 
 function WeatherNow() {
     return (
-        <section className="weather-now">
-            <div className="first-block">
+        <section className="weather-now block w-full flex justify-between items-center px-[26px]">
+            <div className="first-block flex flex-col items-center">
                 <TemperatureBlock />
                 <SunTimesBlock />
             </div>

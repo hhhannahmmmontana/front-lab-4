@@ -31,7 +31,23 @@ code {
 }
 
 .search {
-  background-color: var(--color-bg-50);  
+  background-color: var(--color-bg-50);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 25%);
+}
+
+.block {
+  background-color: var(--color-bg-50);
+  border-radius: 30px;
+  box-shadow: 10px 10px 4px rgba(0, 0, 0, 50%);
+  height: 330px;
+}
+
+.current-location-button {
+  background-color: #4CBB17;
+  border-radius: 40px;
+  padding: 0 26px;
+  min-width: fit-content;
+  max-height: 62px;
 }
 
 .theme-toggler {
@@ -63,6 +79,30 @@ code {
   &.light {
     &::before {
       right: 13px;
+    }
+  }
+}
+
+.main-info {
+  width: 510px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sun-time {
+  display: flex;
+  .icon {
+    margin-right: 11px;
+  }
+  .text-block {
+    .name {
+      font-weight: 600;
+      font-size: 20px;
+    }
+    .time {
+      font-weight: 600;
+      font-size: 16px;
     }
   }
 }
