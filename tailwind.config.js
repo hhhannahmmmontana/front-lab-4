@@ -6,10 +6,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'bg': {
-          50: '#383838',
-          100: '#1e1e1e'
-        },
         'text-color': '#FFFFFF',
         'placeholder-color': '#FFFFFF28'
       }

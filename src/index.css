@@ -6,8 +6,10 @@
   --color-switch-bg: #D9D9D9;
   --color-switch-fg: #111111;
   --color-text: #FFFFFF;
-  --color-bg-50: #383838;
-  --color-bg-100: #1e1e1e;
+  --color-bg-50: #444444;
+  --color-bg-100: #383838;
+  --color-bg-200: #373636;
+  --color-bg-300: #1e1e1e;
 }
 
 body {
@@ -39,7 +41,6 @@ code {
   background-color: var(--color-bg-50);
   border-radius: 30px;
   box-shadow: 10px 10px 4px rgba(0, 0, 0, 50%);
-  height: 330px;
 }
 
 .current-location-button {
@@ -134,4 +135,11 @@ code {
       font-weight: 600;
     }
   }
+}
+
+.wind-north-east {
+  transform: rotate(30deg);
+}
+.wind-north-west {
+  transform: rotate(-30deg);
 }

@@ -6,7 +6,7 @@ import WeatherNow from "./sections/weather-now/WeatherNow";
 
 function App() {
     return (
-        <div className="application bg-gradient-to-br from-bg-50 to-bg-100 flex justify-center flex-col items-center w-full p-[63px]">
+        <div className="application bg-gradient-to-br from-[var(--color-bg-100)] to-[var(--color-bg-300)] flex justify-center flex-col items-center w-full p-[63px]">
             <AppHeader />
             <content className="sized grid grid-cols-[auto_1fr] gap-[55px] gap-y-[51px]">
                 <MainInfo />
