@@ -5,14 +5,14 @@ function SunTimesBlock() {
     return (
         <div className="sun-times-block grid grid-cols-1 gap-y-[13px] w-full">
             <div className="sun-time sunrise">
-                <img className="icon" alt="Sunrise" src={sunrise} />
+                <img className="icon icon-filled" alt="Sunrise" src={sunrise} />
                 <div className="text-block">
                     <h3 className="name">Sunrise</h3>
                     <p className="time">06:37 AM</p>
                 </div>
             </div>
             <div className="sun-time sunset">
-                <img className="icon" alt="Sunset" src={sunset} />
+                <img className="icon icon-filled" alt="Sunset" src={sunset} />
                 <div className="text-block">
                     <h3 className="name">Sunset</h3>
                     <p className="time">08:37 PM</p>

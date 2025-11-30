@@ -13,11 +13,11 @@ function windClassFromAlt(windAlt) {
 
 function HourlyForecast() {
     const forecastData = [
-        { time: "12:00", img: clear, weatherAlt: "Clear", temperature: "26°C", windAlt: "North", windSpeed: "3km/h" },
-        { time: "15:00", img: clear, weatherAlt: "Clear", temperature: "27°C", windAlt: "North West", windSpeed: "3km/h" },
-        { time: "18:00", img: cloudy, weatherAlt: "Cloudy", temperature: "27°C", windAlt: "North", windSpeed: "3km/h" },
-        { time: "21:00", img: cloudy, weatherAlt: "Cloudy", temperature: "25°C", windAlt: "North East", windSpeed: "3km/h" },
-        { time: "00:00", img: clear, weatherAlt: "Clear", temperature: "22°C", windAlt: "North", windSpeed: "3km/h" },
+        { time: "12:00", img: clear, timeOfDay: "day", weatherAlt: "Clear", temperature: "26°C", windAlt: "North", windSpeed: "3km/h" },
+        { time: "15:00", img: clear, timeOfDay: "day", weatherAlt: "Clear", temperature: "27°C", windAlt: "North West", windSpeed: "3km/h" },
+        { time: "18:00", img: cloudy, timeOfDay: "day", weatherAlt: "Cloudy", temperature: "27°C", windAlt: "North", windSpeed: "3km/h" },
+        { time: "21:00", img: cloudy, timeOfDay: "night", weatherAlt: "Cloudy", temperature: "25°C", windAlt: "North East", windSpeed: "3km/h" },
+        { time: "00:00", img: clear, timeOfDay: "night", weatherAlt: "Clear", temperature: "22°C", windAlt: "North", windSpeed: "3km/h" },
     ]
 
     return (
@@ -26,9 +26,9 @@ function HourlyForecast() {
             <div className="flex w-fit gap-[15px] h-full">
                 {forecastData.map((it, index) => {
                     return (
-                        <div className="item bg-[var(--color-bg-200)] h-full rounded-[40px] flex flex-col justify-between w-[130px] items-center py-[15px]" key={index}>
+                        <div className={"hourly-forecast-item bg-[var(--color-bg-200)] h-full rounded-[40px] flex flex-col justify-between w-[130px] items-center py-[15px] " + it.timeOfDay} key={index}>
                             <p className="time text-[24px] font-bold">{it.time}</p>
-                            <img className="weather-icon w-[80px] h-[80px]" src={it.img} alt={it.weatherAlt} />
+                            <img className="weather-icon icon w-[80px] h-[80px]" src={it.img} alt={it.weatherAlt} />
                             <p className="temperature text-[20px] font-bold">{it.temperature}</p>
                             <div className="wind-arrow-scontainer w-fit flex justify-center items-center">
                                 <img className={"wind-icon " + windClassFromAlt(it.windAlt)} src={windArrow} alt={it.windAlt} />
