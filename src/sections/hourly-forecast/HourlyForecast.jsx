@@ -31,7 +31,7 @@ function HourlyForecast() {
                             <img className="weather-icon icon w-[80px] h-[80px]" src={it.img} alt={it.weatherAlt} />
                             <p className="temperature text-[20px] font-bold">{it.temperature}</p>
                             <div className="wind-arrow-scontainer w-fit flex justify-center items-center">
-                                <img className={"wind-icon " + windClassFromAlt(it.windAlt)} src={windArrow} alt={it.windAlt} />
+                                <img className={"wind-icon icon " + windClassFromAlt(it.windAlt)} src={windArrow} alt={it.windAlt} />
                             </div>
                             <p className="wind-speed text-[20px] font-bold">{it.windSpeed}</p>
                         </div>
