@@ -33,7 +33,7 @@ function AppHeader() {
                 <img className="current-location-icon w-[35px] h-[35px] mr-[8px]" src={currentLocation} alt="Location"/>
                 <span className="current-location-title font-extrabold text-[22px] text-white">Current Location</span>
             </button>
-            <button onClick={toggleMetricSystem()} className="ms-button bg-[var(--color-bg-50)] rounded-[40px] w-[80px]">
+            <button onClick={toggleMetricSystem} className="ms-button bg-[var(--color-bg-50)] rounded-[40px] w-[80px]">
                 <span className="text font-bold text-[22px]">{isMetric ? "°C" : "°F"}</span>
             </button>
         </header>
