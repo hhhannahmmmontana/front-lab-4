@@ -1,14 +1,20 @@
 import React from "react";
 import AppShell from "./components/layout/AppShell";
-import { UnitsProvider } from "./services/UnitsProvider";
+import { I18nProvider } from "./hooks/useI18n";
+import { GeolocationProvider } from "./hooks/useGeolocation";
+import { UnitsProvider } from "./hooks/useUnits";
 
 
 function App() {
     return (
         <React.StrictMode>
-            <UnitsProvider>
-                <AppShell />
-            </UnitsProvider>
+            <I18nProvider>
+                <GeolocationProvider>
+                    <UnitsProvider>
+                        <AppShell />
+                    </UnitsProvider>
+                </GeolocationProvider>
+            </I18nProvider>
         </React.StrictMode>
     );
 }

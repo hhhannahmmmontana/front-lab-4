@@ -1,5 +1,5 @@
-import { createContext } from 'react';
-import { useLocalStorage } from '../hooks/useLocalStorage';
+import { createContext, useContext } from 'react';
+import { useLocalStorage } from './useLocalStorage';
 
 export const UnitsContext = createContext(undefined);
 
@@ -18,4 +18,14 @@ export const UnitsProvider = ({ children }) => {
             {children}
         </UnitsContext.Provider>
     );
+};
+
+export const useUnits = () => {
+    const context = useContext(UnitsContext);
+
+    if (!context) {
+        throw new Error('useUnits must be used within a UnitsProvider');
+    }
+
+    return context;
 };
