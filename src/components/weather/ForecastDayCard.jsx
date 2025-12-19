@@ -11,7 +11,7 @@ function windClassFromAlt(windAlt) {
     }
 }
 
-function HourlyForecast() {
+function ForecastDayCard() {
     const forecastData = [
         { time: "12:00", img: clear, timeOfDay: "day", weatherAlt: "Clear", temperature: "26°C", windAlt: "North", windSpeed: "3km/h" },
         { time: "15:00", img: clear, timeOfDay: "day", weatherAlt: "Clear", temperature: "27°C", windAlt: "North West", windSpeed: "3km/h" },
@@ -21,12 +21,12 @@ function HourlyForecast() {
     ]
 
     return (
-        <div className="hourly-forecast block flex flex-col items-center py-[13px]">
+        <div className="forecast-day-card block flex flex-col items-center py-[13px]">
             <h2 className="title text-[32px] font-bold">Hourly Forecast:</h2>
             <div className="flex w-fit gap-[15px] h-full">
                 {forecastData.map((it, index) => {
                     return (
-                        <div className={"hourly-forecast-item bg-[var(--color-bg-200)] h-full rounded-[40px] flex flex-col justify-between w-[130px] items-center py-[15px] " + it.timeOfDay} key={index}>
+                        <div className={"forecast-day-card bg-[var(--color-bg-200)] h-full rounded-[40px] flex flex-col justify-between w-[130px] items-center py-[15px] " + it.timeOfDay} key={index}>
                             <p className="time text-[24px] font-bold">{it.time}</p>
                             <img className="weather-icon icon w-[80px] h-[80px]" src={it.img} alt={it.weatherAlt} />
                             <p className="temperature text-[20px] font-bold">{it.temperature}</p>
@@ -42,4 +42,4 @@ function HourlyForecast() {
     );
 }
 
-export default HourlyForecast;
+export default ForecastDayCard;

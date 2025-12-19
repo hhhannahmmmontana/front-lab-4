@@ -4,7 +4,7 @@ import drizzly from "/src/img/icons/drizzly.png";
 import misty from "/src/img/icons/misty.png";
 import rainy from "/src/img/icons/rainy.png";
 
-function DailyForecast() {
+function ForecastList() {
     const forecastData = [
         { img: cloudy, alt: "Cloudy", temp: "20°C", date: "Friday, 1 Sep" },
         { img: misty, alt: "Misty", temp: "22°C", date: "Saturday, 2 Sep" },
@@ -14,7 +14,7 @@ function DailyForecast() {
     ];
 
     return (
-        <div className="days-forecast block flex flex-col items-center h-fit py-[20px] pl-[30px] pr-[14px]">
+        <div className="forecast-list block flex flex-col items-center h-fit py-[20px] pl-[30px] pr-[14px]">
             <h2 className="title font-bold text-[32px] py-[20px] px-[14px]">5 Days Forecast:</h2>
             {forecastData.map((it, index) => {
                 return (
@@ -31,4 +31,4 @@ function DailyForecast() {
     );
 }
 
-export default DailyForecast;
+export default ForecastList;

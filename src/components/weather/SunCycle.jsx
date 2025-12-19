@@ -1,9 +1,9 @@
 import sunrise from "/src/img/icons/sunrise.png";
 import sunset from "/src/img/icons/sunset.png";
 
-function SunTimesBlock() {
+function SunCycle() {
     return (
-        <div className="sun-times-block grid grid-cols-1 gap-y-[13px] w-full">
+        <div className="sun-cycle grid grid-cols-1 gap-y-[13px] w-full">
             <div className="sun-time sunrise">
                 <img className="icon icon-filled" alt="Sunrise" src={sunrise} />
                 <div className="text-block">
@@ -22,4 +22,4 @@ function SunTimesBlock() {
     );
 }
 
-export default SunTimesBlock;
+export default SunCycle;
