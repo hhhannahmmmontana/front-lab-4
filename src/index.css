@@ -28,11 +28,11 @@
   filter: drop-shadow(0px 4px 4px #00000040);
 }
 
-[data-theme="light"] .hourly-forecast-item.day {
+[data-theme="light"] .forecast-day-card.day {
   background: linear-gradient(#F88508, #F8850810);
 }
 
-[data-theme="light"] .hourly-forecast-item.night {
+[data-theme="light"] .forecast-day-card.night {
   background: linear-gradient(#443D64, #443D6410);
 }
 

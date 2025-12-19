@@ -2,8 +2,11 @@ import humidty from "/src/img/icons/humidity.png"
 import wind from "/src/img/icons/wind.png"
 import pressure from "/src/img/icons/pressure.png"
 import uv from "/src/img/icons/uv.png"
+import { useUnits } from "../../hooks/useUnits";
 
 function WeatherMetrics() {
+    const { speedSymbol } = useUnits();
+
     return (
         <div className="weather-metrics">
             <div className="weather-metric humidity">
@@ -13,7 +16,7 @@ function WeatherMetrics() {
             </div>
             <div className="weather-metric wind-speed">
                 <img className="icon icon-filled" src={wind} alt="Wind Speed" />
-                <h3 className="value">2km/h</h3>
+                <h3 className="value">2{speedSymbol}</h3>
                 <p className="name">Wind Speed</p>
             </div>
             <div className="weather-metric pressure">

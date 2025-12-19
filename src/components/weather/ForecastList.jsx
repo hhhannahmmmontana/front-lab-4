@@ -1,3 +1,4 @@
+import { useUnits } from "../../hooks/useUnits";
 import clear from "/src/img/icons/clear.png";
 import cloudy from "/src/img/icons/cloudy.png";
 import drizzly from "/src/img/icons/drizzly.png";
@@ -5,12 +6,14 @@ import misty from "/src/img/icons/misty.png";
 import rainy from "/src/img/icons/rainy.png";
 
 function ForecastList() {
+    const { temperatureSymbol } = useUnits();
+
     const forecastData = [
-        { img: cloudy, alt: "Cloudy", temp: "20°C", date: "Friday, 1 Sep" },
-        { img: misty, alt: "Misty", temp: "22°C", date: "Saturday, 2 Sep" },
-        { img: clear, alt: "Clear", temp: "27°C", date: "Sunday, 3 Sep" },
-        { img: drizzly, alt: "Drizzly", temp: "18°C", date: "Monday, 4 Sep" },
-        { img: rainy, alt: "Rainy", temp: "16°C", date: "Tuesday, 5 Sep" },
+        { img: cloudy, alt: "Cloudy", temp: 20, date: "Friday, 1 Sep" },
+        { img: misty, alt: "Misty", temp: 22, date: "Saturday, 2 Sep" },
+        { img: clear, alt: "Clear", temp: 27, date: "Sunday, 3 Sep" },
+        { img: drizzly, alt: "Drizzly", temp: 18, date: "Monday, 4 Sep" },
+        { img: rainy, alt: "Rainy", temp: 16, date: "Tuesday, 5 Sep" },
     ];
 
     return (
@@ -20,7 +23,7 @@ function ForecastList() {
                 return (
                     <div className="item flex gap-[35px] w-full items-center" key={index}>
                         <img className="icon flex-0" alt={it.alt} src={it.img} />
-                        <span className="temperature flex-0 text-[24px] font-semibold">{it.temp}</span>
+                        <span className="temperature flex-0 text-[24px] font-semibold w-[55px]">{it.temp}{temperatureSymbol}</span>
                         <div className="span-container flex-1 flex justify-center">
                             <span className="date text-[24px] font-semibold">{it.date}</span>
                         </div>
