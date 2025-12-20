@@ -162,7 +162,8 @@ code {
   align-items: center;
   width: 210px;
   justify-content: space-between;
-  row-gap: 21px;
+  align-content: space-between;
+  height: 100%;
 
   .weather-metric {
     display: flex;

@@ -5,17 +5,57 @@ import Header from "./Header";
 import LocationBadge from "../weather/LocationBadge";
 import LanguageToggler from "./LanguageToggler";
 
+import { Loader, ErrorState } from "../common/States";
+
+import { useGeolocation } from "../../hooks/useGeolocation";
+import { useUnits } from "../../hooks/useUnits";
+import { useI18n } from "../../hooks/useI18n";
+import { useWeather } from "../../hooks/useWeather";
+
 function AppShell() {
+    const { selectedCity, setCity } = useGeolocation();
+    const { unitSystem, toggleUnits, temperatureSymbol } = useUnits();
+    const { translation, language, setLanguage } = useI18n();
+
+    const { weatherData, loading, error } = useWeather(
+        selectedCity.lat,
+        selectedCity.lon,
+        unitSystem,
+        translation.localNameKey
+    );
+
     return (
-        <div className="application bg-gradient-to-br from-[var(--color-bg-100)] to-[var(--color-bg-300)] flex justify-center flex-col items-center w-full p-[63px] themed relative">
-            <Header />
-            <content className="sized grid grid-cols-[auto_1fr] gap-[55px] gap-y-[51px]">
-                <LocationBadge />
-                <CurrentWeatherCard />
-                <ForecastList />
-                <ForecastDayCard />
+        <div className="application bg-gradient-to-br from-[var(--color-bg-100)] to-[var(--color-bg-300)] flex flex-col items-center w-full p-[63px] themed relative">
+            <Header
+                translation={translation}
+                toggleUnits={toggleUnits}
+                temperatureSymbol={temperatureSymbol}
+                setCity={setCity}
+            />
+            <content className="sized grid grid-cols-[auto_1fr] gap-[55px] gap-y-[51px] min-h-[800px]">
+                {loading && (
+                    <div className="col-span-2 flex justify-center">
+                        <Loader />
+                    </div>
+                )}
+
+                {!loading && error && (
+                    <div className="col-span-2 flex justify-center">
+                        <ErrorState message={error} />
+                    </div>
+                )}
+
+                {!loading && !error && weatherData && (
+                    <>
+                        <LocationBadge translation={translation} selectedCity={selectedCity} />
+                        <CurrentWeatherCard translation={translation} temperatureSymbol={temperatureSymbol} data={weatherData.current} tra />
+                        <ForecastList data={weatherData.forecast} translation={translation} />
+                        <ForecastDayCard translation={translation} />
+                    </>
+                )}
+
             </content>
-            <LanguageToggler />
+            <LanguageToggler language={language} setLanguage={setLanguage} />
         </div>
     );
 }

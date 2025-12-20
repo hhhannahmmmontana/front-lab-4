@@ -6,12 +6,9 @@ import SearchSuggestions from './SearchSuggestions';
 import { useDebounce } from '../../hooks/useDebounce';
 import { useFetchJson } from '../../hooks/useFetchJson';
 import { WeatherService } from '../../services/Api';
-import { useGeolocation } from '../../hooks/useGeolocation';
-import { useI18n } from '../../hooks/useI18n';
 
-function SearchBar() {
+const SearchBar = ({ translation, setCity }) => {
     const { register, watch, setValue } = useForm();
-    const { translation } = useI18n();
     const [isFocused, setIsFocused] = useState(false);
 
     const searchQuery = watch("searchQuery");
@@ -22,8 +19,6 @@ function SearchBar() {
         : null;
 
     const { data: suggestions, loading } = useFetchJson(searchUrl);
-
-    const { setCity } = useGeolocation();
 
     const handleSelect = (city) => {
         setValue("searchQuery", `${city.name}, ${city.country}`);

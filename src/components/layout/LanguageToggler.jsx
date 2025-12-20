@@ -1,10 +1,7 @@
-import { useI18n } from "../../hooks/useI18n";
 import enIcon from "/src/img/icons/us.png";
 import ruIcon from "/src/img/icons/ru.png";
 
-function LanguageToggler() {
-    const { language, setLanguage } = useI18n();
-
+const LanguageToggler = ({ language, setLanguage }) => {
     const toggleLanguage = () => {
         setLanguage(language === 'en' ? 'ru' : 'en');
     };

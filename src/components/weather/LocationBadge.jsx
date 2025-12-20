@@ -1,11 +1,7 @@
 
 import { useState, useEffect } from 'react';
-import { useGeolocation } from './../../hooks/useGeolocation';
-import { useI18n } from '../../hooks/useI18n';
 
-function LocationBadge() {
-    const { translation } = useI18n();
-    const { selectedCity } = useGeolocation();
+const LocationBadge = ({translation, selectedCity}) => {
     const timezoneOffset = selectedCity.timezone || 0;
 
     const [date, setDate] = useState(new Date());

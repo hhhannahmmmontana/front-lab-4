@@ -1,7 +1,6 @@
 import { useContext } from "react";
 
 import { createContext, useState } from 'react';
-import { useFetchJson } from "./useFetchJson";
 
 export const GeolocationContext = createContext(undefined);
 

@@ -1,3 +1,4 @@
+import ForecastList from "../components/weather/ForecastList";
 
 export const translations = {
     en: {
@@ -14,7 +15,11 @@ export const translations = {
         sunrise: "Sunrise",
         sunset: "Sunset",
         locale: "en-US",
-        localNameKey: "en"
+        localNameKey: "en",
+        error: "Oops! Something went wrong...",
+        darkMode: "Dark Mode",
+        hourlyForecast: "Hourly forecast",
+        forecastList: "5 days forecast"
     },
     ru: {
         searchPlaceholder: "Поиск города...",
@@ -30,6 +35,10 @@ export const translations = {
         sunrise: "Рассвет",
         sunset: "Закат",
         locale: "ru-RU",
-        localNameKey: "ru"
+        localNameKey: "ru",
+        error: "Что-то пошло не так...",
+        darkMode: "Темная Тема",
+        hourlyForecast: "Прогноз на день",
+        forecastList: "Прогноз на 5 дней"
     }
 };
