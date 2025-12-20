@@ -24,6 +24,14 @@
   --color-bg-300: #466173;
 }
 
+.icon {
+  filter: drop-shadow(0px 0px 3px #FFFFFFFF);
+}
+
+[data-theme="light"] .search-icon {
+  filter: brightness(0%);
+}
+
 [data-theme="light"] .icon {
   filter: drop-shadow(0px 4px 4px #00000040);
 }
@@ -180,6 +188,7 @@ code {
     .name {
       font-size: 16px;
       font-weight: 600;
+      text-align: center;
     }
   }
 }
@@ -189,4 +198,11 @@ code {
 }
 .wind-north-west {
   transform: rotate(-30deg);
+}
+
+.aqi-annotation {
+  font-weight: bold;
+  background-color: var(--color-bg-100);
+  padding: 5px 10px;
+  border-radius: 15px;
 }

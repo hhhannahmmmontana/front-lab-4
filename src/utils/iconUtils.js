@@ -1,20 +1,14 @@
+const images = import.meta.glob('/src/img/icons/weather/*.png', { eager: true, import: 'default' });
 
-import sun from '/src/img/icons/sun.png';
-import clouds from '/src/img/icons/clouds.png';
-import drizzle from '/src/img/icons/drizzle.png';
-import rain from '/src/img/icons/rain.png';
-import mist from '/src/img/icons/mist.png';
+export const getIconSource = (code, size = 1) => {
+    const baseCode = code.replace('n', 'd');
 
-const icons = {
-    '01d': sun, '01n': sun,
-    '02d': clouds, '02n': clouds,
-    '03d': clouds, '03n': clouds,
-    '04d': clouds, '04n': clouds,
-    '09d': drizzle, '09n': drizzle,
-    '10d': rain, '10n': rain,
-    '50d': mist, '50n': mist
-};
+    let suffix = '';
+    if (size > 2) suffix = '@4x';
+    else if (size > 1) suffix = '@2x';
+    const path = `/src/img/icons/weather/${baseCode}_t${suffix}.png`;
 
-export const getIconSource = (code) => {
-    return icons[code] || sun;
+    const src = images[path];
+
+    return src;
 };

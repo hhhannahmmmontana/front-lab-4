@@ -27,7 +27,11 @@ export const translations = {
         humidity: "Humidity",
         windSpeed: "Wind Speed",
         pressure: "Pressure",
-        uv: "UV"
+        uv: "UV",
+        kmh: "km/h",
+        mph: "mph",
+        hpa: "hPa",
+        airQuality: "Air Quality"
     },
     ru: {
         language: "ru",
@@ -55,6 +59,10 @@ export const translations = {
         humidity: "Влажность",
         windSpeed: "Ск. ветра",
         pressure: "Атм. давление",
-        uv: "UV"
+        uv: "UV",
+        kmh: "км/ч",
+        mph: "м/ч",
+        hpa: "гПа",
+        airQuality: "Качество воздуха"
     }
 };

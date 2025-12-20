@@ -11,6 +11,7 @@ import { useGeolocation } from "../../hooks/useGeolocation";
 import { useUnits } from "../../hooks/useUnits";
 import { useI18n } from "../../hooks/useI18n";
 import { useWeather } from "../../hooks/useWeather";
+import AqiCard from "../weather/AqiCard";
 
 function AppShell() {
     const { selectedCity, setCity } = useGeolocation();
@@ -61,6 +62,10 @@ function AppShell() {
                             temperatureSymbol={temperatureSymbol}
                             speedSymbol={speedSymbol}
                             timezone={selectedCity.timezone}
+                        />
+                        <AqiCard 
+                            data={weatherData.airQuality}
+                            translation={translation} 
                         />
                     </>
                 )}

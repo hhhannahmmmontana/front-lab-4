@@ -1,6 +1,6 @@
+import { getIconSource } from "../../utils/iconUtils";
 import SunCycle from "./SunCycle";
 import WeatherMetrics from "./WeatherMetrics";
-import sun from '/src/img/icons/sun.png';
 
 function CurrentWeatherCard({ data, temperatureSymbol, translation }) {
     const { main, weather, wind, sys } = data;
@@ -25,8 +25,8 @@ function CurrentWeatherCard({ data, temperatureSymbol, translation }) {
                 </div>
                 <SunCycle sys={sys} translation={translation} />
             </div>
-            <div className="weater-big-block flex flex-col items-center justify-between h-full">
-                <img className="icon w-[178px] h-[178px]" alt={description} src={sun} />
+            <div className="weater-big-block flex flex-col items-center justify-between h-full max-w-[250px]">
+                <img className="icon w-[178px] h-[178px]" alt={description} src={getIconSource(weather[0].icon, 4)} />
                 <h2 className="text font-semibold text-[32px] text-center leading-none">{description}</h2>
             </div>
             <WeatherMetrics main={main} wind={wind} translation={translation} />

@@ -28,7 +28,7 @@ const ForecastDayCard = ({translation, temperatureSymbol, speedSymbol, data, tim
                     return (
                         <div className={"forecast-day-card bg-[var(--color-bg-200)] h-full rounded-[40px] flex flex-col justify-between w-[130px] items-center py-[15px] " + dayTime} key={index}>
                             <p className="time text-[24px] font-bold">{time}</p>
-                            <img className="weather-icon icon w-[80px] h-[80px]" src={getIconSource(iconCode)} />
+                            <img className="weather-icon icon w-[80px] h-[80px]" src={getIconSource(iconCode, 2)} />
                             <p className="temperature text-[20px] font-bold">{temp}{temperatureSymbol}</p>
                             <div className="wind-arrow-scontainer w-fit flex justify-center items-center">
                                 <img
@@ -37,7 +37,7 @@ const ForecastDayCard = ({translation, temperatureSymbol, speedSymbol, data, tim
                                     style={{ transform: `rotate(${windDeg}deg)` }}
                                 />
                             </div>
-                            <p className="wind-speed text-[20px] font-bold">{windSpeed}{speedSymbol(translation.language)}</p>
+                            <p className="wind-speed text-[20px] font-bold">{windSpeed}{speedSymbol(translation)}</p>
                         </div>
                     )
                 })}
