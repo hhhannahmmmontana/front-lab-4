@@ -1,20 +1,21 @@
-import DaysForecast from "./sections/daily-forecast/DailyForecast";
-import AppHeader from "./sections/header/AppHeader";
-import HourlyForecast from "./sections/hourly-forecast/HourlyForecast";
-import MainInfo from "./sections/main-info/MainInfo";
-import WeatherNow from "./sections/weather-now/WeatherNow";
+import React from "react";
+import AppShell from "./components/layout/AppShell";
+import { I18nProvider } from "./hooks/useI18n";
+import { GeolocationProvider } from "./hooks/useGeolocation";
+import { UnitsProvider } from "./hooks/useUnits";
+
 
 function App() {
     return (
-        <div className="application">
-            <AppHeader />
-            <content>
-                <MainInfo />
-                <WeatherNow />
-                <DaysForecast />
-                <HourlyForecast />
-            </content>
-        </div>
+        <React.StrictMode>
+            <I18nProvider>
+                <GeolocationProvider>
+                    <UnitsProvider>
+                        <AppShell />
+                    </UnitsProvider>
+                </GeolocationProvider>
+            </I18nProvider>
+        </React.StrictMode>
     );
 }
 
