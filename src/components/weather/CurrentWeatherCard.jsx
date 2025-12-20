@@ -3,7 +3,7 @@ import WeatherMetrics from "./WeatherMetrics";
 import sun from '/src/img/icons/sun.png';
 
 function CurrentWeatherCard({ data, temperatureSymbol, translation }) {
-    const { main, weather, wind, sys, timezone } = data;
+    const { main, weather, wind, sys } = data;
 
     const description = weather[0].description.charAt(0).toUpperCase() + weather[0].description.slice(1);
 
@@ -23,13 +23,13 @@ function CurrentWeatherCard({ data, temperatureSymbol, translation }) {
                         </span>
                     </div>
                 </div>
-                <SunCycle sys={sys} timezone={timezone} />
+                <SunCycle sys={sys} translation={translation} />
             </div>
             <div className="weater-big-block flex flex-col items-center justify-between h-full">
                 <img className="icon w-[178px] h-[178px]" alt={description} src={sun} />
                 <h2 className="text font-semibold text-[32px] text-center leading-none">{description}</h2>
             </div>
-            <WeatherMetrics main={main} wind={wind} />
+            <WeatherMetrics main={main} wind={wind} translation={translation} />
         </section>
     );
 }

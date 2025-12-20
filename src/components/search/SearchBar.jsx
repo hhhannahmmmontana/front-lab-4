@@ -36,7 +36,7 @@ const SearchBar = ({ translation, setCity }) => {
                     autoComplete="off"
                     className="bg-transparent w-full border-none outline-none placeholder-[var(--color-placeholder)]" 
                     type="text" 
-                    placeholder="Search for your preferred city..."
+                    placeholder={translation.searchPlaceholder}
                     
                     {...register("searchQuery")}
 

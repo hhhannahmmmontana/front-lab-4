@@ -14,7 +14,7 @@ import { useWeather } from "../../hooks/useWeather";
 
 function AppShell() {
     const { selectedCity, setCity } = useGeolocation();
-    const { unitSystem, toggleUnits, temperatureSymbol } = useUnits();
+    const { unitSystem, toggleUnits, temperatureSymbol, speedSymbol } = useUnits();
     const { translation, language, setLanguage } = useI18n();
 
     const { weatherData, loading, error } = useWeather(
@@ -49,8 +49,19 @@ function AppShell() {
                     <>
                         <LocationBadge translation={translation} selectedCity={selectedCity} />
                         <CurrentWeatherCard translation={translation} temperatureSymbol={temperatureSymbol} data={weatherData.current} tra />
-                        <ForecastList data={weatherData.forecast} translation={translation} />
-                        <ForecastDayCard translation={translation} />
+                        <ForecastList
+                            data={weatherData.forecast.list}
+                            translation={translation}
+                            temperatureSymbol={temperatureSymbol}
+                            timezone={selectedCity.timezone}
+                        />
+                        <ForecastDayCard
+                            translation={translation}
+                            data={weatherData.forecast.list}
+                            temperatureSymbol={temperatureSymbol}
+                            speedSymbol={speedSymbol}
+                            timezone={selectedCity.timezone}
+                        />
                     </>
                 )}
 

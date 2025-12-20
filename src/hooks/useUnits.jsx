@@ -11,7 +11,7 @@ export const UnitsProvider = ({ children }) => {
     };
 
     const temperatureSymbol = unitSystem === 'metric' ? '°C' : '°F';
-    const speedSymbol = unitSystem === 'metric' ? 'km/h' : 'mph';
+    const speedSymbol = (language) => unitSystem === 'metric' ? (language == "ru") ? 'км/ч' : 'km/h' : (language == "ru") ? 'миль/ч' : 'mph';
 
     return (
         <UnitsContext.Provider value={{ unitSystem, toggleUnits, temperatureSymbol, speedSymbol }}>

@@ -2,6 +2,7 @@ import ForecastList from "../components/weather/ForecastList";
 
 export const translations = {
     en: {
+        language: "en",
         searchPlaceholder: "Search for your preferred city...",
         waitingForInput: "...",
         searching: "Searching...",
@@ -17,11 +18,19 @@ export const translations = {
         locale: "en-US",
         localNameKey: "en",
         error: "Oops! Something went wrong...",
+        errorDescription: "Failed to load weather data",
         darkMode: "Dark Mode",
         hourlyForecast: "Hourly forecast",
-        forecastList: "5 days forecast"
+        forecastList: "5 days forecast",
+        sunset: "Sunset",
+        sunrise: "Sunrise",
+        humidity: "Humidity",
+        windSpeed: "Wind Speed",
+        pressure: "Pressure",
+        uv: "UV"
     },
     ru: {
+        language: "ru",
         searchPlaceholder: "Поиск города...",
         waitingForInput: "...",
         searching: "Поиск...",
@@ -37,8 +46,15 @@ export const translations = {
         locale: "ru-RU",
         localNameKey: "ru",
         error: "Что-то пошло не так...",
+        errorDescription: "Не удалось загрузить данные о погоде",
         darkMode: "Темная Тема",
         hourlyForecast: "Прогноз на день",
-        forecastList: "Прогноз на 5 дней"
+        forecastList: "Прогноз на 5 дней",
+        sunset: "Закат",
+        sunrise: "Рассвет",
+        humidity: "Влажность",
+        windSpeed: "Ск. ветра",
+        pressure: "Атм. давление",
+        uv: "UV"
     }
 };

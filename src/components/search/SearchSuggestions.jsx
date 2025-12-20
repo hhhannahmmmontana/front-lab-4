@@ -37,12 +37,14 @@ function SearchSuggestions({ suggestions, isLoading, onSelect, translation }) {
                         >
                             <span className="flex items-center gap-2">
                                 {city.local_names?.[translation.localNameKey] || city.name}
-                                {city.state && (
-                                    <span className="text-gray-400 text-sm">({city.state})</span>
-                                )}
                             </span>
-                            <span className="font-bold text-gray-500 text-sm bg-gray-200 px-[10px] rounded">
-                                {city.country}
+                            <span>
+                                {city.state && (
+                                    <span className="text-gray-400 text-sm me-2">{city.state}</span>
+                                )}
+                                <span className="font-bold text-gray-500 text-sm bg-gray-200 px-[10px] rounded">
+                                    {city.country}
+                                </span>
                             </span>
                         </li>
                     ))}

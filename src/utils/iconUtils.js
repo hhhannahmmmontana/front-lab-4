@@ -1,21 +1,17 @@
 
 import sun from '/src/img/icons/sun.png';
-import cloud from '/src/img/icons/cloud.png';
+import clouds from '/src/img/icons/clouds.png';
 import drizzle from '/src/img/icons/drizzle.png';
 import rain from '/src/img/icons/rain.png';
-import snow from '/src/img/icons/snow.png';
-import storm from '/src/img/icons/storm.png';
 import mist from '/src/img/icons/mist.png';
 
 const icons = {
     '01d': sun, '01n': sun,
-    '02d': cloud, '02n': cloud,
-    '03d': cloud, '03n': cloud,
-    '04d': cloud, '04n': cloud,
+    '02d': clouds, '02n': clouds,
+    '03d': clouds, '03n': clouds,
+    '04d': clouds, '04n': clouds,
     '09d': drizzle, '09n': drizzle,
     '10d': rain, '10n': rain,
-    '11d': storm, '11n': storm,
-    '13d': snow, '13n': snow,
     '50d': mist, '50n': mist
 };
 

@@ -13,8 +13,8 @@ export const ErrorState = ({ message }) => {
 
     return (
         <div className="flex flex-col items-center justify-center w-full h-[300px] text-center">
-            <h2 className="text-2xl font-bold text-white mb-2">{translation.error}</h2>
-            <p className="text-white opacity-70 max-w-[400px]">{message}</p>
+            <h2 className="text-2xl font-bold mb-2">{translation.error}</h2>
+            <p className="opacity-70 max-w-[400px]">{translation.errorDescription}</p>
         </div>
     );
 };
